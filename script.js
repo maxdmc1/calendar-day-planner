@@ -21,13 +21,13 @@
 // display time and date in element currentDay
 
 const currentDayEl = document.getElementById("currentDay");
-
+let time
 
 function clock() {
 
     interval = setInterval(function () {
 
-        let time = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+        time = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 
         currentDayEl.innerHTML = time
 
@@ -35,4 +35,6 @@ function clock() {
 
 }
 clock()
+
+
 
