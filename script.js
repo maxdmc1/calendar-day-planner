@@ -18,10 +18,43 @@
 // 
 
 
-// display time and date in element currentDay
+// display time and date in element currentDay - https://momentjs.com/docs/#/displaying/
 
 const currentDayEl = document.getElementById("currentDay");
 let time
+
+let hours = [{
+    hour: "9a",
+    value: 9
+},
+{
+    hour: "10a",
+    value: 10
+},
+{
+    hour: "11a",
+    value: 11
+},
+{
+    hour: "12n",
+    value: 12
+},
+{
+    hour: "1p",
+    value: 13
+},
+{
+    hour: "2p",
+    value: 14
+},
+{
+    hour: "3p",
+    value: 15
+},
+{
+    hour: "4p",
+    value: 16
+}]
 
 function clock() {
 
@@ -36,5 +69,24 @@ function clock() {
 }
 clock()
 
+console.log(hours);
 
+
+for (let i =0; i < hours.length; i++){
+    const calendarSpace = document.getElementById("calendar-space");
+    const rowEl = document.createElement("row");
+    rowEl.setAttribute("class", "row");
+    const columnHourEl = document.createElement("textarea");
+    const columnSaveEl = document.createElement("button");
+    columnHourEl.setAttribute("class", "hour col-8 border border-dark");
+    columnHourEl.setAttribute("placeholder", hours[i].hour);
+    // columnHourEl.innerText = hours[i].hour.value;
+    columnSaveEl.setAttribute("class", "saveBtn col-2");
+    columnSaveEl.innerText = "Save";
+    
+    console.log(hours[i].hour);
+    calendarSpace.append(rowEl);
+    rowEl.append(columnHourEl);
+    rowEl.append(columnSaveEl);
+}
 
